@@ -1,0 +1,118 @@
+item,paper,recomputed,status,note
+Table 1 decision points,4427,4427,MATCH,
+Table 1 repositories,293,293,MATCH,
+Table 1 / Figure 1a prevalence AUPRC,0.003,0.003,MATCH,
+Table 1 / Figure 1a age_only AUPRC,0.010,0.010,MATCH,
+Table 1 / Figure 1a static AUPRC,0.020,0.020,MATCH,
+Table 1 / Figure 1a qwen_ensemble AUPRC,0.046,0.046,MATCH,
+Table 1 Random R@1%,.205,,UNAVAILABLE,The paper calls this expected recall k/n. The sealed export has no such row. Its prevalence horizon_macro Recall@1% is a different quantity and is not substituted.
+Table 1 Random R@5%,.225,,UNAVAILABLE,The paper calls this expected recall k/n. The sealed export has no such row. Its prevalence horizon_macro Recall@5% is a different quantity and is not substituted.
+Table 1 / Figure 1a age_only Recall@1%,0.336,0.336,MATCH,
+Table 1 / Figure 1a age_only Recall@5%,0.401,0.401,MATCH,
+Table 1 / Figure 1a age_only NDCG@1%,0.339,0.339,MATCH,
+Table 1 / Figure 1a age_only NDCG@5%,0.379,0.379,MATCH,
+Table 1 / Figure 1a static Recall@1%,0.446,0.446,MATCH,
+Table 1 / Figure 1a static Recall@5%,0.536,0.536,MATCH,
+Table 1 / Figure 1a static NDCG@1%,0.453,0.453,MATCH,
+Table 1 / Figure 1a static NDCG@5%,0.505,0.505,MATCH,
+Table 1 / Figure 1a qwen_ensemble Recall@1%,0.616,0.616,MATCH,
+Table 1 / Figure 1a qwen_ensemble Recall@5%,0.723,0.723,MATCH,
+Table 1 / Figure 1a qwen_ensemble NDCG@1%,0.628,0.628,MATCH,
+Table 1 / Figure 1a qwen_ensemble NDCG@5%,0.690,0.690,MATCH,
+Table 1 / Figure 1a qwen_seed_20260915 Recall@5%,0.732,0.732,MATCH,
+Table 1 / Figure 1a qwen_seed_20260916 Recall@5%,0.697,0.697,MATCH,
+Table 1 / Figure 1a qwen_seed_20260917 Recall@5%,0.678,0.678,MATCH,
+Held-out strict edges,238,238,MATCH,
+Table 2 delayed edges,215,215,MATCH,
+Table 2 delayed repositories,110,110,MATCH,
+Native development strict edges,31,31,MATCH,
+Native development delayed edges,26,26,MATCH,
+SWE-smith strict edges,5,5,MATCH,
+SWE-smith delayed edges,1,1,MATCH,
+Table 2 Age-only B=28672 DUF,0.595,0.595,MATCH,per-edge kept at consume
+Table 2 Default-Recency B=28672 DUF,0.573,0.573,MATCH,per-edge kept at consume
+Table 2 Default-Recency B=28672 delta,-2.2,-2.2,MATCH,per-edge kept at consume
+Table 2 Default-Recency B=28672 CI,"[-5.2, 0.3]","[-5.2, 0.3]",MATCH,per-edge kept at consume
+Table 2 RACC-TFIDF B=28672 DUF,0.578,0.578,MATCH,per-edge kept at consume
+Table 2 RACC-TFIDF B=28672 delta,-1.7,-1.7,MATCH,per-edge kept at consume
+Table 2 RACC-TFIDF B=28672 CI,"[-4.1, -0.1]","[-4.1, -0.1]",MATCH,per-edge kept at consume
+Table 2 Oracle-Future B=28672 DUF,1.000,1.000,MATCH,per-edge kept at consume
+Table 2 Oracle-Future B=28672 delta,40.5,40.5,MATCH,per-edge kept at consume
+Table 2 Oracle-Future B=28672 CI,"[32.1, 49.0]","[32.1, 49.0]",MATCH,per-edge kept at consume
+Table 2 Age-quota B=28672 DUF,0.701,0.701,MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 Age-quota B=28672 delta,10.6,10.6,MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 Age-quota B=28672 CI,"[6.2, 15.6]","[6.2, 15.6]",MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 TFIDF-quota B=28672 DUF,0.684,0.684,MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 TFIDF-quota B=28672 delta,8.9,8.9,MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 TFIDF-quota B=28672 CI,"[2.0, 16.0]","[2.0, 16.0]",MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 Oracle-quota B=28672 DUF,0.951,0.951,MATCH,per-edge kept at consume
+Table 2 Oracle-quota B=28672 delta,35.6,35.6,MATCH,per-edge kept at consume
+Table 2 Oracle-quota B=28672 CI,"[27.3, 43.4]","[27.3, 43.4]",MATCH,per-edge kept at consume
+Table 2 Age-only B=57344 DUF,0.978,0.978,MATCH,per-edge kept at consume
+Table 2 Default-Recency B=57344 DUF,0.973,0.973,MATCH,per-edge kept at consume
+Table 2 Default-Recency B=57344 delta,-0.5,-0.5,MATCH,per-edge kept at consume
+Table 2 Default-Recency B=57344 CI,"[-1.4, 0.0]","[-1.4, 0.0]",MATCH,per-edge kept at consume
+Table 2 RACC-TFIDF B=57344 DUF,0.911,0.911,MATCH,per-edge kept at consume
+Table 2 RACC-TFIDF B=57344 delta,-6.7,-6.7,MATCH,per-edge kept at consume
+Table 2 RACC-TFIDF B=57344 CI,"[-11.4, -2.8]","[-11.4, -2.8]",MATCH,per-edge kept at consume
+Table 2 Oracle-Future B=57344 DUF,1.000,1.000,MATCH,per-edge kept at consume
+Table 2 Oracle-Future B=57344 delta,2.2,2.2,MATCH,per-edge kept at consume
+Table 2 Oracle-Future B=57344 CI,"[0.0, 5.3]","[0.0, 5.3]",MATCH,per-edge kept at consume
+Table 2 Age-quota B=57344 DUF,0.978,0.978,MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 Age-quota B=57344 delta,0.0,0.0,MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 TFIDF-quota B=57344 DUF,0.925,0.925,MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 TFIDF-quota B=57344 delta,-5.3,-5.3,MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 TFIDF-quota B=57344 CI,"[-9.7, -1.2]","[-9.7, -1.2]",MATCH,repository rows; edge-level kept flag is absent from the synced per-edge files
+Table 2 Oracle-quota B=57344 DUF,1.000,1.000,MATCH,per-edge kept at consume
+Table 2 Oracle-quota B=57344 delta,2.2,2.2,MATCH,per-edge kept at consume
+Table 2 Oracle-quota B=57344 CI,"[0.0, 5.2]","[0.0, 5.2]",MATCH,per-edge kept at consume
+Table 2 Random-quota B=28672 DUF,0.584,0.584,MATCH,"mean of repository-macro DUF across seeds 20261001, 20261002, 20261003"
+Table 2 Random-quota B=28672 delta,-1.1,-1.1,MATCH,
+Table 2 Random-quota B=28672 range,7.2,7.2,MATCH,
+Table 2 Random-quota B=57344 DUF,0.909,0.909,MATCH,"mean of repository-macro DUF across seeds 20261001, 20261002, 20261003"
+Table 2 Random-quota B=57344 delta,-6.9,-6.9,MATCH,
+Table 2 Random-quota B=57344 range,1.2,1.2,MATCH,
+Table 2 Oracle rank B=28672 DUF,0.596,0.596,MATCH,per-edge kept at consume
+Table 2 Oracle rank B=28672 delta,0.1,0.1,MATCH,per-edge kept at consume
+Table 2 Oracle rank B=28672 CI,"[-1.9, 2.6]","[-1.9, 2.6]",MATCH,per-edge kept at consume
+Table 2 quota gap Oracle-quota minus Age-quota B=28672,25.0,25.0,MATCH,
+Table 3 Age-only prefix-excluded DUF,0.694,0.694,MATCH,per-edge kept at consume
+Table 3 TF-IDF rank prefix-excluded delta,-6.9,-6.9,MATCH,
+Table 3 TF-IDF rank prefix-excluded CI,"[-15.0, 1.1]","[-15.0, 1.1]",MATCH,
+Table 3 Oracle rank prefix-excluded delta,14.4,14.4,MATCH,
+Table 3 Oracle rank prefix-excluded CI,"[6.9, 22.3]","[6.9, 22.3]",MATCH,
+Table 3 Oracle-Future prefix-excluded delta,30.6,30.6,MATCH,
+Table 3 Oracle-Future prefix-excluded CI,"[22.8, 39.2]","[22.8, 39.2]",MATCH,
+Table 3 TF-IDF rank standard delta,-1.7,-1.7,MATCH,
+Table 3 TF-IDF rank standard CI,"[-4.1, -0.1]","[-4.1, -0.1]",MATCH,
+Table 3 Oracle rank standard delta,0.1,0.1,MATCH,
+Table 3 Oracle rank standard CI,"[-1.9, 2.6]","[-1.9, 2.6]",MATCH,
+Table 3 Oracle-Future standard delta,40.5,40.5,MATCH,
+Table 3 Oracle-Future standard CI,"[32.1, 49.0]","[32.1, 49.0]",MATCH,
+Table 3 median capacity standard target,-407.0,-407.0,MATCH,median of target_tokens - prefix_tokens on Age-only triggers
+Prose median capacity Default-Recency B=28672,-407,-407.0,MATCH,same definition on Default-Recency triggers
+Prose negative capacity count Default-Recency B=28672,194,194,MATCH,
+Prose Default-Recency compressions B=28672,271,271,MATCH,
+Prose maximum capacity Default-Recency B=28672,439,439,MATCH,
+Figure 3 prefix overfills held-out B=28672,72%,72%,MATCH,194 of 271
+Prose Default-Recency wipes B=28672,262 of 271,262 of 271,MATCH,
+Figure 3 held-out wipe share B=28672,96.7%,96.7%,MATCH,
+Table 3 Age-only wipe rate standard,97.0%,97.0%,MATCH,262 of 270
+Figure 3 held-out wipe share B=57344,0%,0.0%,MATCH,0 of 57
+Table 3 median capacity prefix-excluded,about 7k,6964,MATCH,median of target_tokens - prefix_tokens
+Table 3 Age-only wipe rate prefix-excluded,4.9%,4.9%,MATCH,20 of 410
+Figure 3 development median prefix B=28672,13849,13849,MATCH,exact median 13848.5 over 38 streams; the figure prints the half-up integer
+Figure 3 development capacity bar B=28672,487,487,MATCH,
+Figure 3 development median prefix B=57344,13849,13849,MATCH,exact median 13848.5 over 38 streams; the figure prints the half-up integer
+Figure 3 development capacity bar B=57344,14823,14823,MATCH,
+Figure 3 development wipe share B=28672,90.6%,90.6%,MATCH,87 of 96
+Figure 3 development wipe share B=57344,0%,0%,MATCH,0 of 25
+Figure 3 held-out median prefix B=28672,14592,14592,MATCH,exact median 14591.5 over 114 streams; the figure prints the half-up integer
+Figure 3 held-out capacity bar B=28672,0,0,MATCH,"max(0, 14336 - 14592)"
+Figure 3 held-out median prefix B=57344,14592,14592,MATCH,exact median 14591.5 over 114 streams; the figure prints the half-up integer
+Figure 3 held-out capacity bar B=57344,14080,14080,MATCH,"max(0, 28672 - 14592)"
+Prose forced wipes,213,213,MATCH,213 of 271 compressions
+Prose deleted origins larger than capacity,67 of 69,67 of 69,MATCH,
+Figure 1b history-token increase,1.7%,1.7%,MATCH,mean history tokens over every phase-1 decision view at budget 28672
+Figure 1b production keeps,57%,57%,MATCH,
+Figure 1b hindsight keeps,100%,100%,MATCH,

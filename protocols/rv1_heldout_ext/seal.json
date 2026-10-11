@@ -1,0 +1,289 @@
+{
+  "created_at": "2026-10-02T13:22:22+08:00",
+  "inputs": [
+    {
+      "bytes": 633,
+      "name": "dataset_report",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/formal_dataset/data_report.json",
+      "sha256": "749a8bdd727c682616f8410cef2e00484deabb836d6d7e8900d0669a1672ccdb"
+    },
+    {
+      "bytes": 300629,
+      "name": "manifest",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/formal_manifest.json",
+      "sha256": "d00d477b8317f7f6f2595d8480d435ff8a030a88f006cf49a9b8f251ff123787"
+    },
+    {
+      "bytes": 291737,
+      "name": "strict_edges",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/formal_dataset/strict_edges.jsonl",
+      "sha256": "16f4d5cbe5a9fa7c7ff481c89403a32058129f564130934150a0f2842b465041"
+    },
+    {
+      "bytes": 55968696,
+      "name": "groups",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/formal_dataset/groups.jsonl",
+      "sha256": "f408a09e74ffc0f56baf52287536df27c9d2d5f454bd5a3810fd2c70a471354a"
+    },
+    {
+      "bytes": 171575581,
+      "name": "tfidf_scores",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/tfidf_scores.jsonl",
+      "sha256": "fb4d040c8dad01a42ce6d55f4780bc587557516be5eb75883f43921b496a0979"
+    },
+    {
+      "bytes": 160837152,
+      "name": "oracle_future_scores",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/oracle_future_scores.jsonl",
+      "sha256": "7f88e4a1ade09026ddf1b6ae96dea7bc8233cbfea270e607989b3096069df1ab"
+    },
+    {
+      "bytes": 55034,
+      "name": "replay_rv1",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_capacity/code/replay_rv1.py",
+      "sha256": "8e95e7146c68cc2bcb6321d9b7228f6c625c911f4170d6f7830cdf4d1090fc13"
+    },
+    {
+      "bytes": 16793,
+      "name": "evaluator",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/m1b/code/m1a_evaluate.py",
+      "sha256": "0d9e0e3538260e670ec7c00a1910ae29e497b6b1776c2bf9cd7290f030452ab1"
+    },
+    {
+      "bytes": 1833,
+      "name": "reused_replay_report",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/replay_delayed/replay_report.json",
+      "sha256": "08d618358f72458c04d36e70acb1a04d766cb83c5a2743405d1469a20f03a832"
+    }
+  ],
+  "label": "held-out 集的事后分析",
+  "protocol": [
+    {
+      "bytes": 14596,
+      "name": "protocol",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/protocol/protocol.json",
+      "sha256": "73bbf6af9990fa0c8d78f22aa501268d1ea008b7e988d77adff4da3a1de2e8d1"
+    },
+    {
+      "bytes": 80,
+      "name": "protocol_prereplay_sha256",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/protocol/protocol.sha256",
+      "sha256": "d4729bb5a436d0c71b9dd664cf332e23dd35406c0cc3a9639b1bbd8d68da7e84"
+    }
+  ],
+  "results": [
+    {
+      "bytes": 557,
+      "name": "smoke_report",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/smoke/smoke_report.json",
+      "sha256": "c70647f82c5bc484e897f85cb43106da6c12b86ab3394eb094a40efb4a60718a"
+    },
+    {
+      "bytes": 1660,
+      "name": "A_merged_replay_report",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/A_capacity/merged/replay_report.json",
+      "sha256": "41516a521253fc5e17f37c70dff2d13ed3bda0c70fd1ba290201f6355e2fd8b7"
+    },
+    {
+      "bytes": 10878661,
+      "name": "A_merged_triggers",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/A_capacity/merged/triggers.jsonl",
+      "sha256": "386438fe1e978dba368aee0d737c61d6564d65b1abf22e497c86df4fade0af77"
+    },
+    {
+      "bytes": 283527775,
+      "name": "A_merged_decision_views",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/A_capacity/merged/decision_views.jsonl",
+      "sha256": "6e6c7050d665d63f0ea5870c9c307079408db5ecb330d955c5667225300d8945"
+    },
+    {
+      "bytes": 316546,
+      "name": "A_merged_stream_arm_results",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/A_capacity/merged/stream_arm_results.jsonl",
+      "sha256": "9ffc2bfc16a3784eafaef1249fcf1a081e0d1d413809784f52b74700a972b9b9"
+    },
+    {
+      "bytes": 8435,
+      "name": "A_eval_result",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/A_capacity/eval/result.json",
+      "sha256": "58cca9b08cb4af01eb6499ed0f7e5e57b120581f329773d28811c816f5989abe"
+    },
+    {
+      "bytes": 768822,
+      "name": "A_eval_per_edge",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/A_capacity/eval/per_edge.jsonl",
+      "sha256": "32f2d6e2fda60aa2e96cf9eeee1844a5c8d40b91413e6729f46edf5ecae99a18"
+    },
+    {
+      "bytes": 140496,
+      "name": "A_eval_per_trajectory",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/A_capacity/eval/per_trajectory.jsonl",
+      "sha256": "49c30a74e9a282e0e043ef2818098f5c1ce78dd6a2aff4926e2e0679b69bfc9a"
+    },
+    {
+      "bytes": 119976,
+      "name": "A_eval_per_repository",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/A_capacity/eval/per_repository.jsonl",
+      "sha256": "b63ec13c6307f548a236299872fb0d10ecf8a2863e30e182a4be890cc99a332d"
+    },
+    {
+      "bytes": 10062,
+      "name": "A_extra_metrics",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/A_capacity/extra_metrics.json",
+      "sha256": "1a77433b2e1db9ab3e0c3bbdd6bb057acf1a2bdfa3a164f2707e46ae3612336e"
+    },
+    {
+      "bytes": 3433,
+      "name": "A_RESULT",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/A_capacity/RESULT.md",
+      "sha256": "5791a1584d0f8d7f10163b2b86b8aa9012f9cab700135cb971ac25e36f5637ad"
+    },
+    {
+      "bytes": 1623,
+      "name": "B_merged_replay_report",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/merged/replay_report.json",
+      "sha256": "ff87c586163af76f8d467770fa87b83cfdc9446b82f34f8f57ca8abd8973ae7d"
+    },
+    {
+      "bytes": 5308827,
+      "name": "B_merged_triggers",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/merged/triggers.jsonl",
+      "sha256": "7165b96f6ab4518643bb6b62aeb6da049c30543bb6ff4b325760aa58f298038a"
+    },
+    {
+      "bytes": 240449003,
+      "name": "B_merged_decision_views",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/merged/decision_views.jsonl",
+      "sha256": "a119c7de93811e3caec4a3ed732fd2a2e207e8b087dc639c82d9f82eb6eb3175"
+    },
+    {
+      "bytes": 329928,
+      "name": "B_merged_stream_arm_results",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/merged/stream_arm_results.jsonl",
+      "sha256": "26f70df7257d837b87d584ed4391c6eb12f45ee137941f6055e9ee8791f99550"
+    },
+    {
+      "bytes": 9750,
+      "name": "B_eval_result",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/eval/result.json",
+      "sha256": "b88ef33bf42c808743877159f8a0fd141f39a692777ae1ac3d1120dcd61b4aaa"
+    },
+    {
+      "bytes": 922587,
+      "name": "B_eval_per_edge",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/eval/per_edge.jsonl",
+      "sha256": "02b3b26e744e087ccb4c162a483808caddf4158740d0f2bf9afa0df857d58ef0"
+    },
+    {
+      "bytes": 167927,
+      "name": "B_eval_per_trajectory",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/eval/per_trajectory.jsonl",
+      "sha256": "ced7ad1499565c898d7daa0f6180f65dd2220b8666c40192026a4543e74032d3"
+    },
+    {
+      "bytes": 143303,
+      "name": "B_eval_per_repository",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/eval/per_repository.jsonl",
+      "sha256": "4f14aad0225b8e724ff0f040466f5586b78b9a85ce1b0767fee14d5aa53d105d"
+    },
+    {
+      "bytes": 24018,
+      "name": "B_extra_metrics",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/extra_metrics.json",
+      "sha256": "c497812642e3e284431296c254ed442d5f9ea5b9ad7b1e262da83a82c9c1fc83"
+    },
+    {
+      "bytes": 4585,
+      "name": "B_RESULT",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/RESULT.md",
+      "sha256": "4c4951d9160268515c1edcd166efaeb35729cde0dd1c8a489bb31e41753709a3"
+    },
+    {
+      "bytes": 1628,
+      "name": "C_merged_replay_report",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/C_quota/merged/replay_report.json",
+      "sha256": "e44913876e18bb1081849372213c352f1b7a7f4b3f06a9d9b523725c87326c53"
+    },
+    {
+      "bytes": 9346911,
+      "name": "C_merged_triggers",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/C_quota/merged/triggers.jsonl",
+      "sha256": "3541bb97c493aaff6a6519f46f349cbea0c5aa6e03d2aa0d30903515e651a9d7"
+    },
+    {
+      "bytes": 250381314,
+      "name": "C_merged_decision_views",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/C_quota/merged/decision_views.jsonl",
+      "sha256": "9127f74ce69509b555b370db6911e786134927200b920bcbf5b08cecb6f71152"
+    },
+    {
+      "bytes": 331797,
+      "name": "C_merged_stream_arm_results",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/C_quota/merged/stream_arm_results.jsonl",
+      "sha256": "3d1e8d842e5df577322efa62608a0b3a6e670556edfc4871838c794a5049ac90"
+    },
+    {
+      "bytes": 10143,
+      "name": "C_eval_result",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/C_quota/eval/result.json",
+      "sha256": "391ac6805237f8914467f35aa035210f149a0a3075c4e28f587a87d8df0c8441"
+    },
+    {
+      "bytes": 924687,
+      "name": "C_eval_per_edge",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/C_quota/eval/per_edge.jsonl",
+      "sha256": "db559639a434304b03fd117ba836982d745700aaac4cfb70d16c244e850c242e"
+    },
+    {
+      "bytes": 169195,
+      "name": "C_eval_per_trajectory",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/C_quota/eval/per_trajectory.jsonl",
+      "sha256": "d231ea5fa1a02f3b82b8376e004fbbd7b85978e30b28155693cf013bdb0ee49d"
+    },
+    {
+      "bytes": 144571,
+      "name": "C_eval_per_repository",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/C_quota/eval/per_repository.jsonl",
+      "sha256": "ebdbd8d2697f54e97f38ad86042bafd578f2feac14fcd8d1ca47b7d16120e467"
+    },
+    {
+      "bytes": 16543,
+      "name": "C_extra_metrics",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/C_quota/extra_metrics.json",
+      "sha256": "cf736e2cf7904f6d43444e0fa85a6a09048f4b2e9fa5947805cd20a7ab1d1b32"
+    },
+    {
+      "bytes": 3976,
+      "name": "C_RESULT",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/C_quota/RESULT.md",
+      "sha256": "f725e1550392e9862b0123dcbb8ae1be8d9435e9afffcbfb3d997f5af5f10459"
+    },
+    {
+      "bytes": 13106,
+      "name": "B_reference_eval_result",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/reference_eval/result.json",
+      "sha256": "08e151a4ce5d097fb63392ed5381868e475e0e485e66ff05131fb93b1c377ada"
+    },
+    {
+      "bytes": 1220464,
+      "name": "B_reference_per_edge",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/reference_eval/per_edge.jsonl",
+      "sha256": "a2f0d19c7d307577e2da84a40581361689801e117d3e6dea0756c21187ece84e"
+    },
+    {
+      "bytes": 186558,
+      "name": "B_reference_per_repository",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/B_noise/reference_eval/per_repository.jsonl",
+      "sha256": "5d25ee8214401168d959f28fd8e1278d2561715ff3438587451b0e38a8dd1c5b"
+    },
+    {
+      "bytes": 1641,
+      "name": "table_rows",
+      "path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout_ext/TABLE_ROWS.md",
+      "sha256": "5bb67e7fe66c179d192d7c238aa3f3d0193de826cf6be2367785177332b3faa8"
+    }
+  ],
+  "schema_version": "racc-rv1-heldout-ext-seal-v1",
+  "status": "RV1_HELDOUT_EXT_SEALED",
+  "valid_for_effectiveness_claim": false
+}

@@ -1,0 +1,16 @@
+Anonymization scan of the full package, protocols/ included.
+Files scanned: 53. Binary files were scanned as latin-1 text.
+
+Patterns (regular expressions):
+  account_name: the research host's user account name (literal string withheld here)
+  absolute_server_path: /ssd/
+  home_directory: /Users/|/home/[A-Za-z]
+  public_ip_or_host: 175\.102\.|root@
+  email: [A-Za-z0-9._-]+@[A-Za-z0-9-]+\.(edu|ac|com|org|cn|net)\b
+  secret_token: sk-[A-Za-z0-9]{20,}|hf_[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}
+
+Paths inside protocols/ and seal files were replaced by /data/ and their hashes recomputed (see protocols/README.md).
+Retained on purpose: api_key placeholder 'local-qwen' and the private container address 172.17.0.1; neither identifies a person or a host.
+
+Hits (file, pattern, count):
+  none

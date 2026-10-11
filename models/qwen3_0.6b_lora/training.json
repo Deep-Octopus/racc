@@ -1,0 +1,28 @@
+{
+  "best_dev_loss": 0.0014329419612558647,
+  "dev_rows": 22442,
+  "fit_split": "train",
+  "history": [
+    {
+      "dev_loss": 0.0017413357144586243,
+      "epoch": 0,
+      "steps": 1466,
+      "train_loss": 0.03516989169362443
+    },
+    {
+      "dev_loss": 0.0014329419612558647,
+      "epoch": 1,
+      "steps": 1466,
+      "train_loss": 0.016149525440651007
+    }
+  ],
+  "lora_rank": 8,
+  "max_length": 768,
+  "model": "Qwen/Qwen3-0.6B",
+  "schema_version": "racc-model-v2-d1-06b-train-v1",
+  "seed": 20260914,
+  "selected_epoch": 1,
+  "selection_split": "dev",
+  "status": "TRAINING_COMPLETE",
+  "train_rows": 46899
+}

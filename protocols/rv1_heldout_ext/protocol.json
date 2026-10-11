@@ -1,0 +1,292 @@
+{
+  "bootstrap": {
+    "baseline": "同一目标规则下的 Age-only。half_budget 用已封存的 Age-only，prefix_excluded 用新跑的 Age-only-prefix。Age-only 不重跑。",
+    "implementation": "unmodified m1b/code/m1a_evaluate.py bootstrap_ci",
+    "interval_indexes": [
+      50,
+      1949
+    ],
+    "paired_repository_count": "两侧 DUF 都非空的仓库。不把样本改成 110。",
+    "replicates": 2000,
+    "seed": 20260914,
+    "seed_key": "heldout:{budget}:{arm}-minus-{baseline}",
+    "unit": "repository"
+  },
+  "created_at": "2026-10-02T03:12:13+08:00",
+  "description": "在已封存的 rv1_heldout replay_delayed 114 条流上补三组事后描述。不修改 rv1_heldout、rv1_capacity 或任何已封存目录，不改 τ、Q、种子和样本，不设通过门。",
+  "do_not_modify": [
+    "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout",
+    "/data/experiments/racc_deliverables_20260915/model_v2/rv1_capacity",
+    "/data/experiments/racc_deliverables_20260915/model_v2/rv1_capacity/code/replay_rv1.py",
+    "/data/experiments/reacq_aware_compressor_r1/model_v2/replay.py",
+    "/data/experiments/racc_deliverables_20260915/model_v2/m1b/code/m1a_evaluate.py",
+    "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/formal_dataset",
+    "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/formal_manifest.json"
+  ],
+  "frozen_choices": {
+    "quota_tokens": 6144,
+    "random_seeds": [
+      20261001,
+      20261002,
+      20261003
+    ],
+    "sample": "rv1_heldout/replay_delayed 的 114 条严格边流。口头说的 110 个仓库不是样本筛选。",
+    "stone_soup_note": "开发切片上的 Stone-Soup +4.76pp 不是本实验的贡献，也不在本样本上重算成贡献。",
+    "swe_smith_slice": "不回放、不重新设阈值、不拿来声称方法有效。",
+    "tau": 0.6632113018429802
+  },
+  "hash_files": [
+    "protocol/protocol.sha256 是回放前的协议哈希，也是本目录里唯一的 .sha256 文件。",
+    "全部结果完成后按 rv1_capacity/seal.json 的方式写 seal.json。除此之外不写哈希侧车。",
+    "分片 replay_identity.json 里的协议哈希、过滤哈希和代码哈希只用于拒绝混跑，不是额外的哈希文件。"
+  ],
+  "inputs": {
+    "api_key": "local-qwen",
+    "cascade_limit": 8,
+    "dataset": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/formal_dataset",
+    "dataset_report_sha256": "749a8bdd727c682616f8410cef2e00484deabb836d6d7e8900d0669a1672ccdb",
+    "edges_sha256": "16f4d5cbe5a9fa7c7ff481c89403a32058129f564130934150a0f2842b465041",
+    "evaluator": "/data/experiments/racc_deliverables_20260915/model_v2/m1b/code/m1a_evaluate.py",
+    "evaluator_sha256": "0d9e0e3538260e670ec7c00a1910ae29e497b6b1776c2bf9cd7290f030452ab1",
+    "events_root": "/data/experiments",
+    "fire_tokens": "budget",
+    "groups": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/formal_dataset/groups.jsonl",
+    "keep_first": 2,
+    "manifest": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/formal_manifest.json",
+    "manifest_sha256": "d00d477b8317f7f6f2595d8480d435ff8a030a88f006cf49a9b8f251ff123787",
+    "model": "openai/qwen3.8-27b",
+    "oracle_future_scores": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/oracle_future_scores.jsonl",
+    "replay_rv1": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_capacity/code/replay_rv1.py",
+    "replay_rv1_sha256": "8e95e7146c68cc2bcb6321d9b7228f6c625c911f4170d6f7830cdf4d1090fc13",
+    "reused_replay": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/replay_delayed",
+    "reused_report": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/report_delayed",
+    "sealed_replay": "/data/experiments/reacq_aware_compressor_r1/model_v2/replay.py",
+    "sealed_replay_sha256": "1e14d64760a72b6cf2aeacc9b9b3d60c0c47ec905e96ee918bc8b370a62f70eb",
+    "strict_edges": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/formal_dataset/strict_edges.jsonl",
+    "summary_headroom": 4096,
+    "tfidf_checkpoint": "/data/experiments/racc_deliverables_20260915/model_v2/m1b/tfidf_checkpoint.joblib",
+    "tfidf_checkpoint_sha256": "60b1e3ce4f52a9c289c18c7e4448567e50ac782eb62633f4e0b93565e41fe497",
+    "tfidf_scores": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/tfidf_scores.jsonl",
+    "tokenizer": "/data/models/Qwen3.8-27B",
+    "tokenizer_sha256": "7591159ab39b4d390f5231fc7a5effadf36869ed14a1892df11437fc1c538402"
+  },
+  "label": "held-out 集的事后分析",
+  "metrics": {
+    "C_t": "(B // 2) - prefix_tokens。prefix_tokens 是该次触发记录里的字段，即当时视图前两个事件的 token 数。不用 (B - prefix_tokens) // 2。",
+    "IR_I": "evaluate() 的 edge_micro.IR_I",
+    "crossed_delayed_edge": "延迟边指 distance_action_groups >= 2。触发的决策组序号 D 是 groups.jsonl 里该 decision_action_event_id 的 group_index。存在该流该臂该预算的某次触发满足 origin_group_index < D <= consume_group_index，则这条延迟边跨过压缩。",
+    "deleted_origin_larger_than_C_t": "被删源头里，source_tokens 大于删除时刻那次触发的 C_t 的个数。",
+    "deleted_origins": "源头是 (stream_id, origin group_id)。它被删除：回放顺序中存在一次触发，forgotten_event_ids 包含该源头组的全部 event_ids，且该触发的 D 对该源头至少一条延迟边满足 origin_group_index < D <= consume_group_index。同一臂、同一预算下每个源头只计一次。删除时刻取第一次满足该条件的触发。",
+    "edge_micro_DUF": "evaluate() 的 edge_micro.DUF",
+    "forced_wipe": "该触发本身是 wipe，并且每一个活的非前缀源头组的 source_tokens 都大于该次触发的 C_t。空的活组集合不是强制 wipe。source_tokens 取 groups.jsonl。",
+    "mean_history_tokens": "evaluate() 的 mean_history_tokens，对全部决策视图取平均",
+    "paired_difference": "同一仓库的臂 DUF 减同目标 Age-only DUF，再对仓库取平均，并用上面的 bootstrap 给区间",
+    "racc_equals_tfidf_rank_check": "写 A 的 RESULT 之前，用封存的 tfidf_scores.jsonl 统计这 114 条流上的最大 risk，并检查 replay_delayed 里 RACC-TFIDF 触发的 protected_group_ids 与 protected_tokens。只有最大 risk < tau 且没有任何触发写出保护组时，才写明 RACC-TFIDF 在本样本上等价于不做保护的 TFIDF-rank。protect_min_risk 只把 risk >= tau 的组放进硬保护；保护集为空时，删除顺序与 score 排序相同。",
+    "repository_macro_DUF": "evaluate() 的 repository_macro.DUF，区间是 repository_macro.DUF_95ci",
+    "wipe": "与 rv1_heldout/code/report_heldout.py 的活组重建相同：keep_first=2 的非 Condensation 事件是前缀；一次触发若忘掉当时全部活的、且不与前缀相交的源头组，则是 wipe；活的非前缀组为空则不是 wipe。wipe 率的分母是该臂该预算的全部触发。"
+  },
+  "pass_gate": null,
+  "phases": {
+    "A": {
+      "arms": [
+        {
+          "name": "Oracle-rank",
+          "policy": "score",
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/oracle_future_scores.jsonl",
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Age-only-prefix",
+          "policy": "age",
+          "target_rule": "prefix_excluded"
+        },
+        {
+          "name": "TFIDF-rank-prefix",
+          "policy": "score",
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/tfidf_scores.jsonl",
+          "target_rule": "prefix_excluded"
+        },
+        {
+          "name": "Oracle-rank-prefix",
+          "policy": "score",
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/oracle_future_scores.jsonl",
+          "target_rule": "prefix_excluded"
+        },
+        {
+          "name": "Oracle-Future-prefix",
+          "policy": "score",
+          "protect_min_risk": 1.0,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/oracle_future_scores.jsonl",
+          "target_rule": "prefix_excluded"
+        }
+      ],
+      "budgets": [
+        28672
+      ],
+      "directory": "A_capacity",
+      "expected_runs": 570,
+      "reuse_from": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/replay_delayed",
+      "reused_half_budget_arms": [
+        "Age-only",
+        "RACC-TFIDF"
+      ]
+    },
+    "B": {
+      "arms": [
+        {
+          "name": "Default-Recency-rep",
+          "policy": "default"
+        },
+        {
+          "name": "RACC-TFIDF-rep",
+          "policy": "score",
+          "protect_min_risk": 0.6632113018429802,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/tfidf_scores.jsonl",
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Oracle-Future-rep",
+          "policy": "score",
+          "protect_min_risk": 1.0,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/oracle_future_scores.jsonl",
+          "target_rule": "half_budget"
+        }
+      ],
+      "baseline_arm": "Age-only",
+      "budgets": [
+        28672,
+        57344
+      ],
+      "directory": "B_noise",
+      "expected_runs": 684,
+      "original_arms": [
+        "Default-Recency",
+        "RACC-TFIDF",
+        "Oracle-Future"
+      ],
+      "reuse_from": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/replay_delayed"
+    },
+    "C": {
+      "arms": [
+        {
+          "name": "Random-quota-20261002",
+          "policy": "random",
+          "protect_quota_tokens": 6144,
+          "random_seed": 20261002,
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Random-quota-20261003",
+          "policy": "random",
+          "protect_quota_tokens": 6144,
+          "random_seed": 20261003,
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Oracle-quota",
+          "policy": "score",
+          "protect_quota_tokens": 6144,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/oracle_future_scores.jsonl",
+          "target_rule": "half_budget"
+        }
+      ],
+      "baseline_arm": "Age-only",
+      "budgets": [
+        28672,
+        57344
+      ],
+      "directory": "C_quota",
+      "expected_runs": 684,
+      "oracle_priority": "oracle_future_scores 的 hindsight 标签。配额按分数从高到低保护，直到再加一组会超过 Q。不使用 protect_min_risk。",
+      "quota_tokens": 6144,
+      "reuse_from": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/replay_delayed",
+      "reused_arms": [
+        "Age-quota",
+        "Random-quota-20261001",
+        "TFIDF-quota"
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "A",
+      "text": "容量机制能否在这 114 条 held-out 流上直接看到，而不只是开发切片上的边。具体比较：prefix_excluded 下 TFIDF-rank 与 Oracle-rank 相对 Age-only-prefix 的配对差值，是否大于 half_budget 下对应的配对差值。两种目标各自的差值和区间都要写出。"
+    },
+    {
+      "id": "B",
+      "text": "同一策略再跑一次差多少。每个臂报告两次运行逐条严格边 retained 不一致的边数和涉及的仓库数，并另报延迟边子集。报告两次仓库宏 DUF 的差值，并把原来相对 Age-only 的配对差值与重跑后相对同一份 Age-only 的配对差值并排。"
+    },
+    {
+      "id": "C",
+      "text": "等配额比较补全 Oracle 和另外两个随机种子。报告 Age-quota、Random 三个种子、TFIDF-quota、Oracle-quota 在两档预算下的 DUF 和相对 Age-only 的配对差值，以及三个 Random 种子的均值与极差。"
+    }
+  ],
+  "reused_arms": [
+    {
+      "name": "Default-Recency",
+      "policy": "default"
+    },
+    {
+      "name": "Age-only",
+      "policy": "age",
+      "target_rule": "half_budget"
+    },
+    {
+      "name": "RACC-TFIDF",
+      "policy": "score",
+      "protect_min_risk": 0.6632113018429802,
+      "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/tfidf_scores.jsonl",
+      "target_rule": "half_budget"
+    },
+    {
+      "name": "Oracle-Future",
+      "policy": "score",
+      "protect_min_risk": 1.0,
+      "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/oracle_future_scores.jsonl",
+      "target_rule": "half_budget"
+    },
+    {
+      "name": "TFIDF-quota",
+      "policy": "score",
+      "protect_quota_tokens": 6144,
+      "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_heldout/scores/tfidf_scores.jsonl",
+      "target_rule": "half_budget"
+    },
+    {
+      "name": "Age-quota",
+      "policy": "age",
+      "protect_quota_tokens": 6144,
+      "target_rule": "half_budget"
+    },
+    {
+      "name": "Random-quota-20261001",
+      "policy": "random",
+      "protect_quota_tokens": 6144,
+      "random_seed": 20261001,
+      "target_rule": "half_budget"
+    }
+  ],
+  "schema_version": "racc-rv1-heldout-ext-protocol-v1",
+  "smoke": {
+    "arms": "phases A、B、C 的全部新臂，各用该臂自己的预算",
+    "expected_runs": 34,
+    "rule": "冒烟只用这两条，且必须是 114 条里按 manifest 顺序的前两条。每个进程只跑一条，第一条走 8001，第二条走 8002。stream-id 子集不替换 kept_stream_ids_sha256。全量必须仍是 114 条。",
+    "stream_ids": [
+      "rv1-heldout-scored-CMakePP__CMinx-57-dbafde58-f3fc-45a0-96c3-7c37a1079107",
+      "rv1-heldout-scored-DinoTools__python-overpy-64-60bc73f4-aacb-4423-850e-1e5c79a0aa7c"
+    ]
+  },
+  "stream_filter": {
+    "assignment": "eligible manifest order, keep streams that appear in strict_edges, then index % 24",
+    "do_not_use_port": 8000,
+    "even_shard_base_url": "http://127.0.0.1:8001/v1",
+    "kept_stream_count": 114,
+    "kept_stream_ids_sha256": "12d1a3f6ac7f53baecfb5e712ad6dea308fe0c348ad2829ba271b2685ad7e310",
+    "kept_stream_ids_sha256_definition": "sha256 of newline-joined sorted stream ids, no trailing newline",
+    "min_edge_distance": 0,
+    "odd_shard_base_url": "http://127.0.0.1:8002/v1",
+    "selection": "strict-edge streams only",
+    "shard_count": 24
+  },
+  "valid_for_effectiveness_claim": false
+}

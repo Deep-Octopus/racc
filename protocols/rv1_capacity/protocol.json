@@ -1,0 +1,416 @@
+{
+  "code": {
+    "copied_from": "/data/experiments/racc_deliverables_20260915/model_v2/m1b/code/replay.py",
+    "evaluator": "/data/experiments/racc_deliverables_20260915/model_v2/m1b/code/m1a_evaluate.py",
+    "evaluator_unmodified": true,
+    "extensions": [
+      "target_rule",
+      "protect_quota_tokens",
+      "oracle_horizon"
+    ],
+    "replay": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_capacity/code/replay_rv1.py",
+    "stream_ids_filter": "operational shard filter applied after validate_formal_inputs; not a fourth scientific factor; checkpoint identity does not include the stream list"
+  },
+  "condenser": {
+    "api_key": "local-qwen",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "cascade_limit": 8,
+    "class": "LLMSummarizingCondenser",
+    "keep_first": 2,
+    "max_size": 240,
+    "model": "openai/qwen3.8-27b",
+    "summary_headroom_tokens": 4096,
+    "tokenizer": "/data/models/Qwen3.8-27B",
+    "tokenizer_sha256_required": "7591159ab39b4d390f5231fc7a5effadf36869ed14a1892df11437fc1c538402"
+  },
+  "experiments": {
+    "e1": {
+      "arms": [
+        {
+          "name": "Age-only",
+          "policy": "age",
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "RACC-TFIDF-rank",
+          "policy": "score",
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_tfidf_v1/tfidf_scores.jsonl",
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Oracle-rank",
+          "policy": "score",
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_v4/oracle_future_scores.jsonl",
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "RACC-TFIDF",
+          "policy": "score",
+          "protect_min_risk": 0.6632113018429802,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_tfidf_v1/tfidf_scores.jsonl",
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Oracle-Future",
+          "policy": "score",
+          "protect_min_risk": 1.0,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_v4/oracle_future_scores.jsonl",
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Age-only-prefix",
+          "policy": "age",
+          "target_rule": "prefix_excluded"
+        },
+        {
+          "name": "RACC-TFIDF-rank-prefix",
+          "policy": "score",
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_tfidf_v1/tfidf_scores.jsonl",
+          "target_rule": "prefix_excluded"
+        },
+        {
+          "name": "Oracle-rank-prefix",
+          "policy": "score",
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_v4/oracle_future_scores.jsonl",
+          "target_rule": "prefix_excluded"
+        },
+        {
+          "name": "RACC-TFIDF-prefix",
+          "policy": "score",
+          "protect_min_risk": 0.6632113018429802,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_tfidf_v1/tfidf_scores.jsonl",
+          "target_rule": "prefix_excluded"
+        },
+        {
+          "name": "Oracle-Future-prefix",
+          "policy": "score",
+          "protect_min_risk": 1.0,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_v4/oracle_future_scores.jsonl",
+          "target_rule": "prefix_excluded"
+        }
+      ],
+      "budgets": [
+        28672
+      ],
+      "control": {
+        "arms": [
+          "Age-only",
+          "RACC-TFIDF",
+          "Oracle-Future"
+        ],
+        "compare_to": [
+          "/data/experiments/racc_deliverables_20260915/model_v2/m1a_v4/per_edge.jsonl",
+          "/data/experiments/racc_deliverables_20260915/model_v2/m1a_v8/per_edge.jsonl",
+          "/data/experiments/racc_deliverables_20260915/model_v2/m1a_v4/result.json",
+          "/data/experiments/racc_deliverables_20260915/model_v2/m1a_v8/result.json"
+        ],
+        "must_match": "At budget 28672, repository-macro DUF and the delayed-edge retained set of Age-only and Oracle-Future match both m1a_v4 and m1a_v8, and RACC-TFIDF matches m1a_v8. Expected repository-macro DUF: Age-only 0.6428571428571429, RACC-TFIDF 0.6904761904761905, Oracle-Future 1.0. Any mismatch stops the campaign before E2 or E3.",
+        "target_rule": "half_budget"
+      },
+      "evaluator": "import evaluate() from the unmodified m1a_evaluate.py and pass budgets=[28672]. The CLI refuses because it requires budgets == [28672, 57344]. The evaluator file is not modified.",
+      "expected_runs": 380,
+      "question": "q1"
+    },
+    "e2": {
+      "arms": [
+        {
+          "name": "Age-quota",
+          "policy": "age",
+          "protect_quota_tokens": 6144,
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Random-quota-20261001",
+          "policy": "random",
+          "protect_quota_tokens": 6144,
+          "random_seed": 20261001,
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Random-quota-20261002",
+          "policy": "random",
+          "protect_quota_tokens": 6144,
+          "random_seed": 20261002,
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Random-quota-20261003",
+          "policy": "random",
+          "protect_quota_tokens": 6144,
+          "random_seed": 20261003,
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "TFIDF-quota",
+          "policy": "score",
+          "protect_quota_tokens": 6144,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_tfidf_v1/tfidf_scores.jsonl",
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Oracle-quota",
+          "policy": "score",
+          "protect_quota_tokens": 6144,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_v4/oracle_future_scores.jsonl",
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Age-only",
+          "policy": "age",
+          "target_rule": "half_budget"
+        }
+      ],
+      "budgets": [
+        28672,
+        57344
+      ],
+      "evaluator": "unmodified m1a_evaluate.py CLI",
+      "expected_runs": 532,
+      "question": "q2"
+    },
+    "e3": {
+      "arms": [
+        {
+          "name": "Oracle-H8",
+          "policy": "score",
+          "protect_min_risk": 1.0,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_capacity/e3/oracle_h8_scores.jsonl",
+          "target_rule": "half_budget"
+        },
+        {
+          "name": "Oracle-H8-quota",
+          "policy": "score",
+          "protect_quota_tokens": 6144,
+          "scores_path": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_capacity/e3/oracle_h8_scores.jsonl",
+          "target_rule": "half_budget"
+        }
+      ],
+      "budgets": [
+        28672,
+        57344
+      ],
+      "evaluator": "unmodified m1a_evaluate.py CLI",
+      "expected_runs": 152,
+      "question": "q3"
+    }
+  },
+  "metrics": {
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 20260914,
+      "unit": "repository"
+    },
+    "extra": {
+      "crossed_compression_delayed_edges": "A delayed edge crosses a compression for an arm when at least one trigger on that stream, arm, and budget has decision group index D with origin_group_index < D <= consume_group_index. D is the group_index of the trigger's decision_action_event_id in groups.jsonl. The condensation is evaluated immediately before that decision action, so a trigger on the consume group counts.",
+      "paired_repository_difference": "For each repository with delayed edges, repository DUF(arm) minus repository DUF(reference). Report every repository and the unweighted mean. Also report that mean after dropping dstl/Stone-Soup. Reference is the same Age-only used for the token relative difference.",
+      "prefix_excluded_wipe": "Only prefix_excluded arms, only triggers whose reasons include tokens. C_t = (B - |P|) // 2. A compressible unit is a live source group or generated summary that does not intersect keep_first. A wipe deletes every compressible unit. Zero compressible units is not a wipe. A forced wipe is a wipe in which every compressible unit has tokens > C_t. Wipe rate = wipe triggers / token-reason triggers on prefix_excluded arms. Also report the forced-wipe count.",
+      "protection_and_over_target": "For every trigger, protected_tokens is the sum of marginal tokens of groups admitted to the protection set before fire-line sacrifice. tokens_over_target is max(0, retained_tokens_before_summary - target) after deletion, including fire-line sacrifice. Report the median and the maximum per arm and budget. Median of an even count is the mean of the two central values.",
+      "token_relative_difference_on_disagreement_streams": "Within one target rule, a stream disagrees at a budget when the delayed-edge retained bit vector differs across the arms that use that target rule. E1 therefore has a half_budget set and a prefix_excluded set; the two targets are not pooled. E3's set also includes E2 Age-only at the same budget, so a stream counts when Oracle-H8, Oracle-H8-quota, or Age-only differ. Token relative difference of an arm versus the reference is (mean decision-view history tokens of the arm on that stream minus the reference) divided by the reference. The reported value is the unweighted mean of those per-stream ratios. Reference is Age-only of the same target rule inside E1, Age-only inside E2, and E2 Age-only for E3."
+    },
+    "primary": [
+      "repository_macro_DUF",
+      "edge_micro_DUF_count",
+      "IR_I",
+      "PTR",
+      "mean_history_tokens"
+    ]
+  },
+  "oracle_horizon": {
+    "distance": "first consume_group_index >= decision_group_index; distance = consume - decision + 1; risk is 1 iff 1 <= distance <= horizon, else 0",
+    "generated_after_protocol_hash_before_replay": true,
+    "horizon": 8,
+    "infinite_oracle_scores": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_v4/oracle_future_scores.jsonl",
+    "label_check": "When horizon is 8, every row must agree with frozen label_now OR label_soon OR label_later. A mismatch aborts before replay.",
+    "output": "/data/experiments/racc_deliverables_20260915/model_v2/rv1_capacity/e3/oracle_h8_scores.jsonl",
+    "tfidf_scores": "/data/experiments/racc_deliverables_20260915/model_v2/m1a_scores_tfidf_v1/tfidf_scores.jsonl"
+  },
+  "outputs": {
+    "e1": [
+      "e1/shards/00-03",
+      "e1/merged",
+      "e1/eval",
+      "e1/RESULT.md"
+    ],
+    "e2": [
+      "e2/shards/00-03",
+      "e2/merged",
+      "e2/eval",
+      "e2/RESULT.md"
+    ],
+    "e3": [
+      "e3/shards/00-03",
+      "e3/merged",
+      "e3/eval",
+      "e3/RESULT.md"
+    ],
+    "not_hashed": [
+      "code",
+      "logs",
+      "checkpoints",
+      "smoke outputs",
+      "this protocol's pre-replay sha256 file is the required pre-replay hash and is not an extra category"
+    ],
+    "seal_after_replay_only": [
+      "protocol.json",
+      "tokenizer identity files",
+      "replay inputs",
+      "merged replay outputs",
+      "eval outputs",
+      "RESULT.md"
+    ],
+    "smoke": [
+      "e1/smoke",
+      "e2/smoke",
+      "e3/smoke"
+    ]
+  },
+  "questions": {
+    "gates": "none. These questions are reported as numbers. A result that does not support the motivating hypothesis is reported as the number, not as a failure.",
+    "q1": "Under prefix_excluded, are the repository-macro DUF differences of RACC-TFIDF-rank and Oracle-rank versus Age-only-prefix larger than the same differences of RACC-TFIDF-rank and Oracle-rank versus Age-only under half_budget? Report all four differences and the two comparisons. Budget 28672 only.",
+    "q2": "At Q=6144 and half_budget, at each of 28672 and 57344, report repository-macro DUF of TFIDF-quota and Oracle-quota minus Age-quota, minus each Random-quota seed (20261001, 20261002, 20261003), and minus the unweighted mean of the three random repository-macro DUFs.",
+    "q3": "How many delayed edges does Oracle-H8 fail to retain that Oracle-Future retains? Also report the reverse count and the net (Oracle-Future retained count minus Oracle-H8 retained count). At 28672 the Oracle-Future arm is the E1 half_budget rerun. At 57344 E1 did not rerun Oracle-Future, so the reference is m1a_v8 Oracle-Future, which m1a_v4 matches on the delayed retained set. Oracle-H8-quota is reported in the tables and is not this comparison."
+  },
+  "quota": {
+    "admission": "At each trigger, walk deletable original groups in this arm's own high-to-low order. Add a group if and only if cumulative tokens plus that group's tokens are <= Q. The first group that would exceed Q is not added, and the walk stops. Later smaller groups are not considered.",
+    "applies_to": "age, score, and random arms that set protect_quota_tokens. Mutually exclusive with protect_min_risk and protect_top_k.",
+    "justification": {
+      "excluded_from_quota_selection": "dev split, including zurutech/ashpy origin 27 source_tokens 1083",
+      "least_multiple_of_512_covering_5517": 5632,
+      "measured_max_train_age_drop_oracle_keep_source_tokens": 5517,
+      "origin": "dstl/Stone-Soup origin group_index 59, train split, two delayed edges, budget 28672, source_tokens from formal_dataset_v7 groups.jsonl",
+      "other_train_origins_not_the_max": [
+        {
+          "budget": 28672,
+          "origin_group_index": 1,
+          "repo": "cdriehuys/django-rest-email-auth",
+          "source_tokens": 3802
+        },
+        {
+          "budgets": [
+            28672,
+            57344
+          ],
+          "origin_group_index": 2,
+          "repo": "dstl/Stone-Soup",
+          "source_tokens": 5258
+        }
+      ],
+      "quota_used": 6144,
+      "why_6144": "The task specifies Q=6144. 6144 = 12 * 512, so it is a multiple of 512, and 6144 >= 5517, so it covers that train origin. It is not the least such multiple; the least multiple of 512 that covers 5517 is 5632. This protocol does not retune Q and does not claim that 6144 equals ceil(5517/512)*512."
+    },
+    "outside_protection": "Groups outside the protection set are deleted in the arm's original deletion order until the target is met. The fire line still applies.",
+    "protect_quota_tokens": 6144,
+    "sort_keys": {
+      "age_deletion": "(live_position, group_id) ascending, oldest first",
+      "age_protection": "reverse of deletion, newest first",
+      "fire_line_sacrifice": "deletion order, lowest priority first",
+      "random_protection": "highest random score first",
+      "random_score": "sha256(f'{seed}\\x1f{stream_id}\\x1f{group_id}') first 8 bytes / 2^64, stable per group, not per decision",
+      "score_deletion": "(risk, group_index, group_id) ascending",
+      "score_protection": "reverse of deletion, highest risk first, then newer group_index"
+    },
+    "unit": "Marginal production tokens of each contiguous live source group in the current view: count(view[:end]) - count(view[:start]), the same difference-of-prefixes definition as dataset source_tokens. Summaries are not quota-protected."
+  },
+  "schema_version": "racc-rv1-capacity-protocol-v1",
+  "shard_balance": "Four shards. Streams were bin-packed by Age-only trigger count summed over budgets 28672 and 57344 in replay_v10 (total weight 120, 30 per shard). All shards use the single endpoint above. At most 4 replay processes run at once.",
+  "shards": [
+    {
+      "id": "00",
+      "stream_ids": [
+        "b1v1-bids-standard__pybids-838-a06f536f-809a-44c3-b0b3-08a32ece2183",
+        "b1v1-felipeangelimvieira__prophetverse-139-0550b80b-cbf0-4536-8578-7cffc9a7051b",
+        "b1v1-cdriehuys__django-simple-email-auth-17-fe46194e-d2df-45c1-bad8-e00c0ad2252b",
+        "b1v1-feature-engine__feature_engine-477-923abbb0-d29f-4473-9924-6e31c674faf1",
+        "b1v1-ejulio__spider-feeder-20-78cfe777-d46a-4eae-ae63-920430b3028e",
+        "b1v1-django-money__django-money-594-a737171e-f1e1-4809-8744-f294e06ae0bd",
+        "b1v1-datalad__datalad-4353-f1fd52f1-c0b5-4b11-ad63-4720c89aceaf",
+        "b1v1-dask__dask-9087-3d544656-f2d0-4307-9e72-d4cac7586475",
+        "b1v1-dalito__ucumvert-25-8e30d02f-07aa-4a05-a4b2-55a6a2749ed0",
+        "b1v1-canonical__operator-360-39286623-d6b6-486c-a357-d059c36f3f9b"
+      ]
+    },
+    {
+      "id": "01",
+      "stream_ids": [
+        "b1v1-dstl__Stone-Soup-1033-b3a2fda4-8c7a-4fee-9c71-8f1f37105234",
+        "b1v1-agronholm__anyio-435-03dfc782-97da-4703-a681-4dfb94d5cce8",
+        "b1v1-frictionlessdata__frictionless-py-1007-28d7d041-09a3-442b-8195-3eb82ba6d64b",
+        "b1v1-conan-io__conan-15950-843be9a5-2774-41cd-b6e7-aba94f3b674f",
+        "b1v1-tophat__syrupy-467-4465fa4d-40a6-4cff-92c9-8e7f8f9cb43e",
+        "b1v1-dwavesystems__dwave-cloud-client-576-02111937-126c-4e8f-86a5-11cbb223bd20",
+        "b1v1-python-cmd2__cmd2-750-3876b64f-89dd-456d-9e64-16542d005813",
+        "b1v1-ejulio__spider-feeder-20-34defecf-288d-4f2a-b87d-a038a4767542",
+        "b1v1-cdriehuys__django-rest-email-auth-18-d850b955-82c5-43a7-a3f3-327e14270154"
+      ]
+    },
+    {
+      "id": "02",
+      "stream_ids": [
+        "b1v1-canonical__operator-360-7eb1c321-e020-4af1-a510-49a6dae9931f",
+        "b1v1-alanmcruickshank__sqlfluff-188-c3b8555f-93dd-469e-8d0e-d657477c651d",
+        "b1v1-googleapis__python-storage-1357-25b32663-3013-4cb9-a84a-727979f031c0",
+        "b1v1-Unidata__MetPy-2271-4e1fa2b7-2475-4f42-93a9-43f252d71fe0",
+        "b1v1-python-cmd2__cmd2-750-a487e7c2-0591-40f7-b0f0-05139702fefa",
+        "b1v1-conan-io__conan-13211-94683ecf-6c7f-4883-93e0-5a0cde269cb3",
+        "b1v1-googleapis__python-storage-1357-e63cc1ad-b236-428b-8408-f73787e4e437",
+        "b1v1-conan-io__conan-4446-f282f559-d97c-483a-883b-39b4ea0b909e",
+        "b1v1-cdriehuys__django-rest-email-auth-18-87fb7232-c4ad-45e2-a128-02aacd122fab"
+      ]
+    },
+    {
+      "id": "03",
+      "stream_ids": [
+        "b1v1-bids-standard__pybids-838-c34675b4-b1e3-407f-a4f6-a9f413adde8f",
+        "b1v1-learningequality__ricecooker-329-53c9c825-7bde-4e02-81d5-db87b7946118",
+        "b1v1-learningequality__ricecooker-329-addd3d1e-d1e6-4ce2-b7b7-648a07c6c151",
+        "b1v1-feder-observatory__stellarphot-308-477d5c1d-4a34-452f-92b3-66e70d338631",
+        "b1v1-zurutech__ashpy-51-95604ac7-5cd0-49ba-a364-ed6e22ae7f01",
+        "b1v1-facelessuser__soupsieve-41-9ff87ce6-6b12-49fd-85a8-f206cadb00ca",
+        "b1v1-cdriehuys__django-simple-email-auth-17-8242e43c-f099-447d-958a-0d8a3a012bab",
+        "b1v1-fgmacedo__python-statemachine-370-4a6610b1-4a10-4a97-b3e1-1be954d88e32",
+        "b1v1-conan-io__conan-10797-09e9b423-7c63-4b7f-a422-cbaed4282339",
+        "b1v1-ShawHahnLab__igseq-12-336b1a52-fbf9-40ba-b246-54f313959734"
+      ]
+    }
+  ],
+  "slice": {
+    "dataset": "/data/experiments/racc_deliverables_20260915/model_v2/data/formal_dataset_v7",
+    "delayed_edges": 26,
+    "manifest": "/data/experiments/racc_deliverables_20260915/model_v2/data/development_manifest_v13.json",
+    "sealed_smith_slice": "not_replayed",
+    "splits": [
+      "train",
+      "dev"
+    ],
+    "stream_count": 38,
+    "strict_edges": 31
+  },
+  "smoke": {
+    "expected_runs": {
+      "e1": 20,
+      "e2": 28,
+      "e3": 8
+    },
+    "outputs_not_merged_into_full_results": true,
+    "pass_requires": [
+      "each smoke replay exits 0 and writes REPLAY_COMPLETE with the expected run count",
+      "half_budget Age-only, RACC-TFIDF, and Oracle-Future delayed-edge retention on these two streams matches m1a_v4 and m1a_v8",
+      "on token triggers, prefix_excluded target equals |P|+(B-|P|)//2 and is greater than B//2 when |P|>0",
+      "quota arms record protected_tokens, and at least one Stone-Soup quota trigger has protected_tokens > 0",
+      "Oracle-H8 loads the horizon-8 score file"
+    ],
+    "stream_ids": [
+      "b1v1-cdriehuys__django-rest-email-auth-18-87fb7232-c4ad-45e2-a128-02aacd122fab",
+      "b1v1-dstl__Stone-Soup-1033-b3a2fda4-8c7a-4fee-9c71-8f1f37105234"
+    ],
+    "why": "django-rest-email-auth holds the train Age-drop/Oracle-keep origin 1. Stone-Soup holds origins 2 and 59, including the 5517-token origin that sets the quota."
+  },
+  "status": "PROTOCOL_FROZEN_BEFORE_REPLAY",
+  "target_rules": {
+    "fire_line": "After the target pass, if retained tokens exceed B - 4096, protected source groups are sacrificed lowest-priority first until retained tokens are at or under that line. keep_first events are never deleted.",
+    "half_budget": "When the SDK trigger reasons include tokens, target = B // 2. Otherwise target is the token count of the events the SDK itself would have retained. This is the historical rule.",
+    "prefix_excluded": "Only for policy age, score, or random, and only when reasons include tokens: |P| is the production token count of the first keep_first events in the current view; target = |P| + (B - |P|) // 2. Non-token triggers keep the historical SDK retained-count target. Default-Recency is not modified and is not an arm in this protocol."
+  },
+  "technical_failures": "Disconnects, OOM, and cascade-limit errors are not results. The completed checkpoint units are kept and the failed unit is rerun with --resume after the cause is fixed.",
+  "valid_for_effectiveness_claim": false
+}
